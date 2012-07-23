@@ -6,7 +6,7 @@ public class WinProxy {
     
     public WinProxy() {
         final String name = "winproxy4j";
-        final File lib = new File(name);
+        final File lib = new File(name + ".dll");
         if (!lib.isFile()) {
             throw new RuntimeException("Missing library at "+
                 lib.getAbsolutePath());
@@ -16,5 +16,5 @@ public class WinProxy {
 
     public native boolean proxy(final String endpoint);
     
-    public native boolean unproxy(final String endpoint);
+    public native boolean unproxy();
 }

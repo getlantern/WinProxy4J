@@ -1,4 +1,3 @@
-#javac ./src/main/java/org/lastbamboo/jni/JLibTorrent.java
 cmd /c "mvn.bat install -Dmaven.test.skip=true"
 
 if (!$?) {
