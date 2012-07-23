@@ -8,6 +8,9 @@ public class WinProxyTest {
 
     @Test
     public void testProxy() throws Exception {
+        if (!System.getProperty("os.name").contains("indows")) {
+            return;
+        }
         final WinProxy proxifier = new WinProxy();
         final String testStr = "127.7.7.7:8888";
         
