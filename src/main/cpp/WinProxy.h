@@ -23,6 +23,14 @@ JNIEXPORT jboolean JNICALL Java_org_lantern_win_WinProxy_proxy
 JNIEXPORT jboolean JNICALL Java_org_lantern_win_WinProxy_unproxy
   (JNIEnv *, jobject);
 
+/*
+ * Class:     org_lantern_win_WinProxy
+ * Method:    getProxy
+ * Signature: ()Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_org_lantern_win_WinProxy_getProxy
+  (JNIEnv *, jobject);
+
 #ifdef __cplusplus
 }
 #endif

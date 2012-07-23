@@ -17,4 +17,6 @@ public class WinProxy {
     public native boolean proxy(final String endpoint);
     
     public native boolean unproxy();
+    
+    public native String getProxy();
 }
