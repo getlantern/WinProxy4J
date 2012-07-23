@@ -11,6 +11,8 @@ jstring lastError(JNIEnv * env) {
 }
 
 jboolean proxy(JNIEnv* env, const jobject& jobj, const jstring& proxyStr, const int flags) {
+
+	// We have to copy the array to a non-const char* here to pass it to InternetSetOptions.
 	const char* raw = env->GetStringUTFChars(proxyStr, NULL);
     if (raw == NULL) {
         return NULL; // OutOfMemoryError already thrown
@@ -53,6 +55,7 @@ jboolean proxy(JNIEnv* env, const jobject& jobj, const jstring& proxyStr, const 
     InternetSetOption(NULL, INTERNET_OPTION_REFRESH , NULL, 0);  
 
 	env->ReleaseStringUTFChars(proxyStr, raw);
+	delete [] proxyAddressStr;
     return bReturn;  
 } 
 
