@@ -16,8 +16,7 @@ import java.io.OutputStream;
 public class WinProxy {
     
     public WinProxy() {
-        final String name = "winproxy4j";
-        final File lib = new File(name + ".dll");
+        final File lib = new File("winproxy4j.dll");
         if (!lib.isFile()) {
             copyFromJar(lib);
             if (!lib.isFile()) {
@@ -25,7 +24,8 @@ public class WinProxy {
                     lib.getAbsolutePath());
             }
         }
-        System.loadLibrary(name);
+        System.load(lib.getAbsolutePath());
+        //System.loadLibrary(name);
     }
 
     public native boolean proxy(final String endpoint);
