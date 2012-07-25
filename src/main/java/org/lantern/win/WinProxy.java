@@ -16,8 +16,12 @@ import java.io.OutputStream;
 public class WinProxy {
     
     public WinProxy() {
+        this(new File("."));
+    }
+    
+    public WinProxy(final File libDir) {
         final String name = "winproxy4j";
-        final File lib = new File(name + ".dll");
+        final File lib = new File(libDir, name + ".dll");
         if (!lib.isFile()) {
             copyFromJar(lib);
             if (!lib.isFile()) {
