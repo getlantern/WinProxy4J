@@ -21,13 +21,15 @@ public class WinProxy {
     
     public WinProxy(final File libDir) {
         final File lib = new File(libDir, "winproxy4j.dll");
-        if (!lib.isFile()) {
+        //if (!lib.isFile()) {
+        // We just copy it every time since it's a small file and this 
+        // allows us not to worry about versions.
             copyFromJar(lib);
             if (!lib.isFile()) {
                 throw new RuntimeException("Missing library at "+
                     lib.getAbsolutePath());
             }
-        }
+        //}
         System.load(lib.getAbsolutePath());
         //System.loadLibrary(name);
     }
