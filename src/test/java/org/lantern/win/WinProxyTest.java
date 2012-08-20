@@ -20,6 +20,19 @@ public class WinProxyTest {
         proxifier.unproxy();
         proxy = proxifier.getProxy();
         assertEquals("", proxy);
+        
+        final String testPacName = "file://c:/proxy_on.pac";
+        proxifier.setPacFile(testPacName);
+        
+        final String file = proxifier.getPacFile();
+        assertEquals(testPacName, file);
+        
+        proxifier.noPacFile();
+        
+        //proxifier.setPacFile("");
+        
+        final String noPac = proxifier.getPacFile();
+        assertEquals("", noPac);
     }
 
 }

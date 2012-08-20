@@ -17,6 +17,22 @@ JNIEXPORT jboolean JNICALL Java_org_lantern_win_WinProxy_proxy
 
 /*
  * Class:     org_lantern_win_WinProxy
+ * Method:    setPacFile
+ * Signature: (Ljava/lang/String;)Z
+ */
+JNIEXPORT jboolean JNICALL Java_org_lantern_win_WinProxy_setPacFile
+  (JNIEnv *, jobject, jstring);
+
+/*
+ * Class:     org_lantern_win_WinProxy
+ * Method:    getPacFile
+ * Signature: ()Ljava/lang/String;
+ */
+JNIEXPORT jstring JNICALL Java_org_lantern_win_WinProxy_getPacFile
+  (JNIEnv *, jobject);
+
+/*
+ * Class:     org_lantern_win_WinProxy
  * Method:    unproxy
  * Signature: ()Z
  */

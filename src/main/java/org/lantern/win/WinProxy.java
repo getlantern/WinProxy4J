@@ -40,6 +40,13 @@ public class WinProxy {
     
     public native String getProxy();
     
+    public native boolean setPacFile(final String url);
+    
+    public native String getPacFile();
+    
+    public void noPacFile() {
+        setPacFile("");
+    }
 
     private void copyFromJar(final File dest) {
         InputStream is = null;
