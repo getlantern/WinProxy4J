@@ -20,6 +20,10 @@ public class WinProxy {
     }
     
     public WinProxy(final File libDir) {
+        final String os = System.getProperty("os.name");
+        if (os != null && !os.contains("indows")) {
+            return;
+        }
         final File lib = new File(libDir, "winproxy4j.dll");
         //if (!lib.isFile()) {
         // We just copy it every time since it's a small file and this 
