@@ -3,7 +3,7 @@
   <groupId>org.getlantern</groupId>
   <artifactId>winproxy4j</artifactId>
   <packaging>jar</packaging>
-  <version>0.0.2-SNAPSHOT</version>
+  <version>0.0.1-SNAPSHOT</version>
   <name>Java Windows System Proxy Controller</name>
   <description>
     
@@ -100,6 +100,7 @@
     </plugins>
   </build>
 
+<!--
   <repositories>
     <repository>
       <id>sonatype-nexus-snapshots</id>
@@ -143,4 +144,5 @@
       </build>
     </profile>
   </profiles>
+-->
 </project>
